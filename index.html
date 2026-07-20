@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miasto Na Przystanku — codzienność miasta z przystanku</title>
+<meta name="description" content="Miasto Na Przystanku — obserwuj codzienność miasta z perspektywy przystanku. Znajdziesz nas na Facebooku, TikToku i YouTube.">
+<meta name="robots" content="index, follow">
+<!-- PODMIEŃ poniższy adres na docelowy adres strony po publikacji na GitHub Pages -->
+<link rel="canonical" href="https://TWOJA-DOMENA/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Miasto Na Przystanku">
+<meta property="og:title" content="Miasto Na Przystanku">
+<meta property="og:description" content="Codzienność miasta widziana z przystanku — dołącz do nas w social mediach.">
+<meta property="og:image" content="background.jpg">
+<meta property="og:url" content="https://TWOJA-DOMENA/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Miasto Na Przystanku">
+<meta name="twitter:description" content="Codzienność miasta widziana z przystanku.">
+<meta name="twitter:image" content="background.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚌</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #f7f6f2;
+    --ink: #191b1a;
+    --ink-soft: #5b615d;
+    --line: #dcdad3;
+    --stop-orange: #c8551f;
+    --stop-orange-soft: #fbeee2;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family:'Inter', system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height:1.5;
+  }
+
+  /* ===== ZDJĘCIE TŁA — PODMIEŃ NA WŁASNE (poziome) =====
+     Wrzuć plik jako background.jpg do katalogu głównego repo. */
+  .hero{
+    position:relative;
+    height: 46vh;
+    min-height: 320px;
+    background-color:#20241f;
+    background-image:
+      linear-gradient(180deg, rgba(10,12,10,0.15) 0%, rgba(8,10,8,0.75) 100%),
+      url('background.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:flex-end;
+    padding: 32px clamp(20px, 6vw, 64px);
+  }
+
+  .hero-inner{ max-width: 880px; width:100%; margin:0 auto; }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:#f2d9c6;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .eyebrow .dot{
+    width:7px; height:7px; border-radius:50%;
+    background:#ff9a4d;
+    box-shadow: 0 0 0 3px rgba(255,154,77,0.25);
+  }
+
+  h1{
+    font-family:'Barlow Semi Condensed', sans-serif;
+    font-weight:700;
+    font-size: clamp(38px, 7vw, 64px);
+    line-height: 0.95;
+    letter-spacing: 0.5px;
+    color:#fbfbf8;
+    text-transform: uppercase;
+  }
+
+  /* ===== LOGO — PODMIEŃ NA WŁASNY OBRAZEK =====
+     Wrzuć plik jako logo.png (lub .svg) do katalogu głównego repo.
+     Nagłówek h1 zostaje w kodzie (niewidoczny) dla SEO i czytników ekranu. */
+  .visually-hidden{
+    position:absolute;
+    width:1px; height:1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+  }
+  .logo-img{
+    max-width: min(420px, 70%);
+    height:auto;
+    display:block;
+  }
+
+  .hero p{
+    color:#d8ddda;
+    font-size: 15px;
+    margin-top: 8px;
+    max-width: 46ch;
+  }
+
+  main{
+    max-width: 880px;
+    margin: 0 auto;
+    padding: clamp(28px, 6vw, 56px) clamp(20px, 6vw, 64px) 80px;
+  }
+
+  .section-label{
+    font-family:'Barlow Semi Condensed', sans-serif;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+
+  /* ===== LINIA PRZYSTANKOWA ===== */
+  .route{
+    position:relative;
+    padding-left: 34px;
+  }
+  .route::before{
+    content:"";
+    position:absolute;
+    left: 9px; top: 8px; bottom: 8px;
+    width: 3px;
+    background: var(--stop-orange);
+    border-radius: 2px;
+  }
+
+  .stop{
+    position:relative;
+    display:block;
+    text-decoration:none;
+    color: var(--ink);
+    padding: 18px 18px 18px 20px;
+    margin-bottom: 12px;
+    background:#fff;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .stop::before{
+    content:"";
+    position:absolute;
+    left: -34px; top: 50%;
+    transform: translateY(-50%);
+    width: 13px; height:13px;
+    border-radius:50%;
+    background:#fff;
+    border: 3px solid var(--stop-orange);
+  }
+  .stop:hover{
+    border-color: var(--stop-orange);
+    transform: translateX(3px);
+    box-shadow: 0 4px 14px rgba(200,85,31,0.12);
+  }
+
+  .stop-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 14px;
+  }
+  .stop-name{
+    font-family:'Barlow Semi Condensed', sans-serif;
+    font-weight:700;
+    font-size: 19px;
+    letter-spacing: .3px;
+  }
+  .stop-sub{
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top:2px;
+  }
+  .stop-arrow{
+    font-size: 18px;
+    color: var(--stop-orange);
+    flex-shrink:0;
+  }
+
+  /* przystanek końcowy — prowadzi do podstrony z plikami */
+  .stop--terminus{
+    background: var(--stop-orange);
+    border-color: var(--stop-orange);
+    color:#fff;
+  }
+  .stop--terminus::before{
+    background: var(--stop-orange);
+    border-color:#fff;
+  }
+  .stop--terminus .stop-sub{ color:#f9e2cf; }
+  .stop--terminus .stop-arrow{ color:#fff; }
+  .stop--terminus:hover{ box-shadow: 0 6px 18px rgba(200,85,31,0.30); }
+
+  footer{
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 6vw, 64px) 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    margin-top: 10px;
+  }
+  footer a{
+    color: var(--stop-orange);
+    font-weight:500;
+    text-decoration:none;
+  }
+  footer a:hover{ text-decoration:underline; }
+
+  @media (max-width:480px){
+    .stop-name{ font-size:17px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow"><span class="dot"></span>Na żywo w mieście</div>
+      <h1 class="visually-hidden">Miasto Na Przystanku</h1>
+      <img class="logo-img" src="logo.jpg" alt="Miasto Na Przystanku">
+      <p>Codzienność miasta widziana z przystanku — dołącz do nas w social mediach.</p>
+    </div>
+  </div>
+
+  <main>
+    <div class="section-label">Wybierz przystanek</div>
+
+    <div class="route">
+      <a class="stop" href="https://www.facebook.com/profile.php?id=61589243926324" target="_blank" rel="noopener">
+        <div class="stop-row">
+          <div>
+            <div class="stop-name">Facebook</div>
+            <div class="stop-sub">Aktualności i relacje</div>
+          </div>
+          <span class="stop-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="stop" href="https://www.tiktok.com/@miastonaprzystanku" target="_blank" rel="noopener">
+        <div class="stop-row">
+          <div>
+            <div class="stop-name">TikTok</div>
+            <div class="stop-sub">Krótkie wideo</div>
+          </div>
+          <span class="stop-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="stop" href="https://www.youtube.com/@MiastoNaPrzystanku" target="_blank" rel="noopener">
+        <div class="stop-row">
+          <div>
+            <div class="stop-name">YouTube</div>
+            <div class="stop-sub">Pełne odcinki</div>
+          </div>
+          <span class="stop-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="stop stop--terminus" href="pliki.html">
+        <div class="stop-row">
+          <div>
+            <div class="stop-name">Pliki do pobrania</div>
+            <div class="stop-sub">Przystanek końcowy</div>
+          </div>
+          <span class="stop-arrow">→</span>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Miasto Na Przystanku</span>
+    <a href="graty.html">wersja na graty (dla starszych komputerów) →</a>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

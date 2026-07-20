@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pliki do pobrania — Miasto Na Przystanku</title>
+<meta name="description" content="Pliki do pobrania związane z projektem Miasto Na Przystanku.">
+<meta name="robots" content="index, follow">
+<!-- PODMIEŃ poniższy adres na docelowy adres strony po publikacji na GitHub Pages -->
+<link rel="canonical" href="https://TWOJA-DOMENA/pliki.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Miasto Na Przystanku">
+<meta property="og:title" content="Pliki do pobrania — Miasto Na Przystanku">
+<meta property="og:description" content="Pliki do pobrania związane z projektem Miasto Na Przystanku.">
+<meta property="og:url" content="https://TWOJA-DOMENA/pliki.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚌</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #f7f6f2;
+    --ink: #191b1a;
+    --ink-soft: #5b615d;
+    --line: #dcdad3;
+    --stop-orange: #c8551f;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    font-family:'Inter', system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height:1.5;
+  }
+  header{
+    background:#20241f;
+    padding: 30px clamp(20px,6vw,64px) 34px;
+  }
+  .back{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    color:#cfe6d8;
+    font-size:13px;
+    text-decoration:none;
+    margin-bottom:14px;
+  }
+  .back:hover{ text-decoration:underline; }
+  header h1{
+    font-family:'Barlow Semi Condensed', sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    font-size: clamp(30px, 6vw, 46px);
+    color:#fbfbf8;
+    letter-spacing:.5px;
+  }
+  header p{
+    color:#d8ddda;
+    font-size:14px;
+    margin-top:6px;
+  }
+
+  main{
+    max-width: 880px;
+    margin: 0 auto;
+    padding: clamp(28px, 6vw, 48px) clamp(20px, 6vw, 64px) 80px;
+  }
+
+  .route{ position:relative; padding-left:34px; }
+  .route::before{
+    content:"";
+    position:absolute;
+    left:9px; top:8px; bottom:8px;
+    width:3px;
+    background: var(--stop-orange);
+    border-radius:2px;
+  }
+
+  .file{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:3px;
+    padding:16px 18px;
+    margin-bottom:12px;
+  }
+  .file::before{
+    content:"";
+    position:absolute;
+    left:-34px; top:50%;
+    transform:translateY(-50%);
+    width:13px; height:13px;
+    border-radius:50%;
+    background:#fff;
+    border:3px solid var(--stop-orange);
+  }
+  .file-name{
+    font-family:'Barlow Semi Condensed', sans-serif;
+    font-weight:700;
+    font-size:17px;
+  }
+  .file-meta{
+    font-size:12px;
+    color: var(--ink-soft);
+    margin-top:2px;
+  }
+  .file-dl{
+    flex-shrink:0;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background: var(--stop-orange);
+    color:#fff;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:500;
+    padding:9px 16px;
+    border-radius:3px;
+    transition: background .15s ease;
+  }
+  .file-dl:hover{ background:#a3441a; }
+
+  .empty-hint{
+    font-size:13px;
+    color: var(--ink-soft);
+    padding: 6px 2px 0 0;
+  }
+
+  footer{
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 6vw, 64px) 40px;
+    font-size:12px;
+    color: var(--ink-soft);
+    border-top:1px solid var(--line);
+    padding-top:20px;
+    margin-top:10px;
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <a class="back" href="index.html">← Miasto Na Przystanku</a>
+    <h1>Pliki do pobrania</h1>
+    <p>Przystanek końcowy trasy — wszystko, co warto zabrać ze sobą.</p>
+  </header>
+
+  <main>
+    <div class="route">
+
+      <div class="file">
+        <div>
+          <div class="file-name">Zdjęcie z Jelczem 666</div>
+          <div class="file-meta">Po prostu zdjęcie Jelcza 😀</div>
+        </div>
+        <a class="file-dl" href="files/diabel.jpg" download>Pobierz</a>
+      </div>
+
+      <!-- Dodawaj kolejne pliki kopiując powyższy blok .file -->
+
+    </div>
+  </main>
+
+  <footer>© <span id="year"></span> Miasto Na Przystanku</footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
